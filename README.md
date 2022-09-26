@@ -11,6 +11,7 @@ If you make an account running this bot, crediting [@pigeonburger](https://twitt
 # Requirements
 
 - A cool TV show
+- Some sort of server/computer that runs 24/7
 - Python version >=3.6
 - `tweepy` (install using `pip install -U tweepy`) 
 - A Twitter account with the twitter API consumer key + secret, and access token + secret (with Write permissions).
