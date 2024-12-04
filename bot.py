@@ -23,7 +23,7 @@ connection = db.connect("framebot.db")
 cursor = connection.cursor()
 
 # Enter the name of the show you're posting frames for here:
-show_name = ""
+show_name = "Dark"
 
 # Put the number of frames the bot should post each time this script is run here.
 iters = 5

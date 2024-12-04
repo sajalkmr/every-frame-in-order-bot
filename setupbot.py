@@ -6,8 +6,8 @@ import os, re, glob, sqlite3 as db
 
 # This is the frame-splitting part (this will probably take a while depending on how fast your computer is)
 
-# Get all the mp4 files in the current folder (change file extension if needed)
-eps = glob.glob("*.mp4")
+# Get all the mkv files in the current folder (change file extension if needed)
+eps = glob.glob("*.mkv")
 
 # Number of frames per second you want the show to be split into
 fps = 1
@@ -30,8 +30,8 @@ for ep in eps:
             os.mkdir(out_path)
 
         # The outputted frame files will look like 00x00.jpg, where the number on the left side of the x is the episode number, and the number on the right side is the frame number.
-        # Also scale down to 360p to save server space (and Twitter compresses the hell out of uploaded media anyway so no point having HD)
-        os.system(f'ffmpeg -i "{ep}" -vf "fps={fps},scale=640:360" {out_path}/{episode}x%d.jpg')
+        # Using high quality settings, maintaining aspect ratio, and burning in English subtitles
+        os.system(f'ffmpeg -i "{ep}" -vf "subtitles=\'{ep}\':force_style=\'FontSize=14\',fps={fps}" -q:v 1 {out_path}/{episode}x%d.jpg')
 
 
 # This half of the script will create the required (SQLite) database entries.
