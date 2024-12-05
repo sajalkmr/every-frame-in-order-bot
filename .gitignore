@@ -1,0 +1,12 @@
+# Video files
+**/*.mkv
+**/*.mp4
+
+# Frames directory
+frames/
+/frames/
+**/frames/
+
+# System files
+.DS_Store
+Thumbs.db
